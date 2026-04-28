@@ -1,0 +1,662 @@
+[
+  {
+    "codigo": "A01",
+    "descripcion": "No transitar por la derecha de la vía.",
+    "tipo": "Conducción indebida",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "A02",
+    "descripcion": "Agarrarse de otro vehículo en movimiento.",
+    "tipo": "Conducta peligrosa",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "A03",
+    "descripcion": "Transportar personas u objetos que dificulten la conducción.",
+    "tipo": "Seguridad Vial",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+    {
+    "codigo": "A04",
+    "descripcion": "Transitar por andenes o zonas prohibidas.",
+    "tipo": "Uso indebido de la vía",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "A05",
+    "descripcion": "No respetar señales de tránsito básicas (cuando no implique mayor riesgo).",
+    "tipo": "Señalización",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "A06",
+    "descripcion": "Conducir sin luces en horarios obligatorios.",
+    "tipo": "Seguridad vial",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "A07",
+    "descripcion": "No usar cinturón de seguridad o elementos básicos (según caso leve).",
+    "tipo": "Seguridad personal",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "A08",
+    "descripcion": "Circular sin placas visibles o en mal estado (cuando es leve).",
+    "tipo": "Identificación del vehículo",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "A09",
+    "descripcion": "Uso indebido de señales audibles o luminosas.",
+    "tipo": "Comportamiento vial",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "A10",
+    "descripcion": "Conducir por la vía férrea o por zonas de protección y seguridad.",
+    "tipo": "Uso indebido de la vía",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "A11",
+    "descripcion": "Transitar por zonas restringidas o por vías de alta velocidad como autopistas y arterias. El vehículo no automotor será inmovilizado.",
+    "tipo": "Restricción de circulación",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "A12",
+    "descripcion": "Prestar servicio público con este tipo de vehículos. El vehículo será inmovilizado: primera vez 5 días, segunda 20 días y tercera 40 días.",
+    "tipo": "Uso indebido del vehículo",
+    "valor_multa": "4 SMDLV ($233.454)"
+  },
+  {
+    "codigo": "B01",
+    "descripcion": "Conducir un vehículo sin llevar consigo la licencia de conducción.",
+    "tipo": "Documentación",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B02",
+    "descripcion": "Conducir un vehículo con la licencia de conducción vencida.",
+    "tipo": "Documentación",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B03",
+    "descripcion": "Conducir un vehículo sin placas, con placas en condiciones que dificulten su identificación o alterar características del vehículo.",
+    "tipo": "Identificación del vehículo",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B04",
+    "descripcion": "Conducir un vehículo con placas adulteradas, retocadas o alteradas.",
+    "tipo": "Identificación del vehículo",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B05",
+    "descripcion": "Conducir un vehículo con una sola placa o sin permiso vigente.",
+    "tipo": "Identificación del vehículo",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B06",
+    "descripcion": "Conducir un vehículo con placas falsas.",
+    "tipo": "Identificación del vehículo",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B07",
+    "descripcion": "No informar a la autoridad el cambio de motor o color del vehículo.",
+    "tipo": "Registro del vehículo",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B08",
+    "descripcion": "No pagar el peaje en los sitios establecidos.",
+    "tipo": "Obligaciones viales",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B09",
+    "descripcion": "Utilizar equipos de sonido a volumen que incomode a pasajeros en servicio público.",
+    "tipo": "Comportamiento en servicio público",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B10",
+    "descripcion": "Conducir un vehículo con vidrios polarizados sin permiso o no cumplir condiciones en servicio público.",
+    "tipo": "Condiciones del vehículo",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B11",
+    "descripcion": "Conducir un vehículo con publicidad en vidrios que obstaculice la visibilidad.",
+    "tipo": "Visibilidad",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B12",
+    "descripcion": "No respetar normas para tránsito de cortejos fúnebres.",
+    "tipo": "Normas especiales",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B13",
+    "descripcion": "No respetar desfiles, procesiones, marchas u otras actividades autorizadas.",
+    "tipo": "Normas especiales",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B14",
+    "descripcion": "Remolcar otro vehículo incumpliendo las condiciones establecidas.",
+    "tipo": "Operación del vehículo",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B15",
+    "descripcion": "Conducir un vehículo de servicio público sin aviso de tarifas visible.",
+    "tipo": "Servicio público",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B16",
+    "descripcion": "Permitir animales u objetos que incomoden pasajeros o mal manejo de equipaje.",
+    "tipo": "Servicio público",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B17",
+    "descripcion": "Abandonar un vehículo de servicio público con pasajeros.",
+    "tipo": "Servicio público",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B18",
+    "descripcion": "No transitar por el carril derecho cuando el vehículo de servicio público está sin pasajeros.",
+    "tipo": "Circulación",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B19",
+    "descripcion": "Realizar cargue o descargue en sitios u horarios prohibidos.",
+    "tipo": "Operación logística",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B20",
+    "descripcion": "Transportar alimentos perecederos sin cumplir condiciones reglamentarias.",
+    "tipo": "Transporte de carga",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B21",
+    "descripcion": "Lavar vehículos en vía pública, ríos, canales o quebradas.",
+    "tipo": "Medio ambiente",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B22",
+    "descripcion": "Llevar niños menores de 10 años en el asiento delantero.",
+    "tipo": "Seguridad vial",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "B23",
+    "descripcion": "Usar equipos de sonido o pantallas que superen límites o distraigan al conducir.",
+    "tipo": "Seguridad vial",
+    "valor_multa": "8 SMDLV ($466.908)"
+  },
+  {
+    "codigo": "C01",
+    "descripcion": "Presentar licencia de conducción adulterada o ajena. Inmovilización del vehículo.",
+    "tipo": "Documentación",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C02",
+    "descripcion": "Estacionar en sitios prohibidos (andenes, zonas verdes, vías principales, puentes, doble fila, curvas, zonas restringidas, entre otros).",
+    "tipo": "Estacionamiento",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C03",
+    "descripcion": "Bloquear una calzada o intersección sin causa justificada.",
+    "tipo": "Circulación",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C04",
+    "descripcion": "Estacionar sin tomar precauciones de seguridad o señalización exigidas.",
+    "tipo": "Estacionamiento",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C05",
+    "descripcion": "No reducir la velocidad en zonas de riesgo (residenciales, escolares, baja visibilidad, intersecciones, hospitales).",
+    "tipo": "Velocidad",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C06",
+    "descripcion": "No usar cinturón de seguridad (incluye asientos traseros según norma).",
+    "tipo": "Seguridad vial",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C07",
+    "descripcion": "No señalizar maniobras de giro, cambio de carril o detención.",
+    "tipo": "Señalización",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C08",
+    "descripcion": "Transitar sin dispositivos luminosos o incumplir requisitos de identificación en servicio público.",
+    "tipo": "Condiciones del vehículo",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C09",
+    "descripcion": "No respetar señales en cruce férreo o circular por zonas de protección ferroviaria.",
+    "tipo": "Seguridad vial",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C10",
+    "descripcion": "Conducir con puertas abiertas.",
+    "tipo": "Seguridad vial",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C11",
+    "descripcion": "No portar equipo mínimo de prevención y seguridad (gato, extintor, señales, etc.).",
+    "tipo": "Seguridad vehicular",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C12",
+    "descripcion": "Abastecer combustible con motor encendido o en condiciones prohibidas.",
+    "tipo": "Seguridad",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C13",
+    "descripcion": "Conducir sin adaptaciones requeridas en caso de limitación física.",
+    "tipo": "Condiciones del conductor",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C14",
+    "descripcion": "Transitar por zonas restringidas o en horarios prohibidos. Inmovilización.",
+    "tipo": "Restricción de circulación",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C15",
+    "descripcion": "Exceder la capacidad autorizada de pasajeros o carga.",
+    "tipo": "Capacidad del vehículo",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C16",
+    "descripcion": "Conducir vehículo escolar sin requisitos o distintivos reglamentarios. Inmovilización.",
+    "tipo": "Servicio especial",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C17",
+    "descripcion": "Circular con vehículos remolcados sin autorización.",
+    "tipo": "Operación del vehículo",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C18",
+    "descripcion": "Conducir taxi o servicio público con taxímetro irregular o dañado. Inmovilización.",
+    "tipo": "Servicio público",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C19",
+    "descripcion": "Recoger o dejar pasajeros en sitios no autorizados.",
+    "tipo": "Servicio público",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C20",
+    "descripcion": "Transportar materiales sin medidas de seguridad o protección adecuadas. Inmovilización.",
+    "tipo": "Transporte de carga",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C21",
+    "descripcion": "No asegurar la carga adecuadamente. Inmovilización.",
+    "tipo": "Transporte de carga",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C22",
+    "descripcion": "Transportar carga sobredimensionada sin requisitos. Inmovilización.",
+    "tipo": "Transporte de carga",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C23",
+    "descripcion": "Enseñar conducción en vía pública sin autorización.",
+    "tipo": "Formación",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C24",
+    "descripcion": "Incumplir normas de conducción de motocicletas (carril, casco, luces, visibilidad, etc.).",
+    "tipo": "Motocicletas",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C25",
+    "descripcion": "Transitar sin cumplir reglas de uso de carriles.",
+    "tipo": "Circulación",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C26",
+    "descripcion": "Vehículos de más de 3.5 toneladas transitando por carril izquierdo sin autorización.",
+    "tipo": "Circulación",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C27",
+    "descripcion": "Conducir con carga o pasajeros que obstruyan visibilidad o control. Inmovilización.",
+    "tipo": "Seguridad vial",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C28",
+    "descripcion": "Uso indebido de sirenas, luces especiales o dispositivos de ruido.",
+    "tipo": "Contaminación sonora",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C29",
+    "descripcion": "Exceder los límites de velocidad permitidos.",
+    "tipo": "Velocidad",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C30",
+    "descripcion": "No atender señal de ceda el paso.",
+    "tipo": "Señalización",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C31",
+    "descripcion": "No acatar señales o indicaciones de autoridades de tránsito.",
+    "tipo": "Autoridad",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C32",
+    "descripcion": "No respetar el paso de peatones.",
+    "tipo": "Seguridad vial",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C33",
+    "descripcion": "Iniciar marcha sin precaución causando riesgo.",
+    "tipo": "Seguridad vial",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C34",
+    "descripcion": "Reparar vehículos en vía pública sin cumplir normas.",
+    "tipo": "Espacio público",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C35",
+    "descripcion": "No realizar revisión tecnicomecánica o incumplir condiciones. Inmovilización.",
+    "tipo": "Condiciones del vehículo",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C36",
+    "descripcion": "Transportar carga en contenedores sin sujeción adecuada. Inmovilización.",
+    "tipo": "Carga",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C37",
+    "descripcion": "Transportar pasajeros en zona de carga (platón o plataforma).",
+    "tipo": "Seguridad vial",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C38",
+    "descripcion": "Usar celular u otros dispositivos sin manos libres al conducir.",
+    "tipo": "Distracción al conducir",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C39",
+    "descripcion": "Incumplir reglas de estacionamiento en autopistas o zonas rurales.",
+    "tipo": "Estacionamiento",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "C40",
+    "descripcion": "Estacionar en lugares para personas con movilidad reducida sin autorización.",
+    "tipo": "Accesibilidad",
+    "valor_multa": "15 SMDLV ($875.453)"
+  },
+  {
+    "codigo": "D01",
+    "descripcion": "Conducir sin licencia de conducción. Inmovilización del vehículo.",
+    "tipo": "Documentación",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D02",
+    "descripcion": "Conducir sin SOAT vigente. Inmovilización del vehículo.",
+    "tipo": "Seguros obligatorios",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D03",
+    "descripcion": "Transitar en sentido contrario. En motocicletas aplica inmovilización.",
+    "tipo": "Circulación",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D04",
+    "descripcion": "No detenerse ante luz roja, amarilla o señal de PARE. En motocicletas aplica inmovilización.",
+    "tipo": "Señalización",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D05",
+    "descripcion": "Conducir por aceras, zonas peatonales, separadores o vías no autorizadas.",
+    "tipo": "Uso indebido de la vía",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D06",
+    "descripcion": "Adelantar en zonas prohibidas como curvas, túneles, puentes o cruces.",
+    "tipo": "Adelantamiento",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D07",
+    "descripcion": "Realizar maniobras peligrosas que pongan en riesgo a personas o bienes.",
+    "tipo": "Conducción peligrosa",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D08",
+    "descripcion": "Conducir sin luces o con fallas en el sistema de iluminación en condiciones obligatorias.",
+    "tipo": "Condiciones del vehículo",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D09",
+    "descripcion": "No dar paso a vehículos de emergencia (ambulancias, bomberos, policía, etc.).",
+    "tipo": "Prioridad vial",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D10",
+    "descripcion": "Exceder velocidad permitida en transporte escolar.",
+    "tipo": "Velocidad",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D11",
+    "descripcion": "Prestar servicio público sin cumplir requisitos de seguridad (salidas de emergencia).",
+    "tipo": "Servicio público",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D12",
+    "descripcion": "Usar un vehículo para un servicio distinto al autorizado. Inmovilización progresiva.",
+    "tipo": "Uso indebido del vehículo",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D13",
+    "descripcion": "Transportar carga con exceso de peso. Inmovilización y transbordo.",
+    "tipo": "Transporte de carga",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D14",
+    "descripcion": "Usar combustibles no regulados que pongan en riesgo la seguridad.",
+    "tipo": "Seguridad vehicular",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D15",
+    "descripcion": "Cambiar ruta autorizada en transporte público sin permiso. Inmovilización.",
+    "tipo": "Servicio público",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D16",
+    "descripcion": "Arrojar residuos sólidos desde el vehículo al espacio público.",
+    "tipo": "Medio ambiente",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "D17",
+    "descripcion": "Incumplir normas de emisiones contaminantes o ruido.",
+    "tipo": "Medio ambiente",
+    "valor_multa": "30 SMDLV ($1.750.906)"
+  },
+  {
+    "codigo": "E01",
+    "descripcion": "Abastecer combustible a vehículo de servicio público con pasajeros a bordo.",
+    "tipo": "Seguridad",
+    "valor_multa": "45 SMDLV ($2.626.359)"
+  },
+  {
+    "codigo": "E02",
+    "descripcion": "Negarse a prestar servicio público sin causa justificada afectando el orden público.",
+    "tipo": "Servicio público",
+    "valor_multa": "45 SMDLV ($2.626.359)"
+  },
+  {
+    "codigo": "E03",
+    "descripcion": "Conducir en estado de embriaguez o bajo sustancias psicoactivas. Inmovilización y sanciones agravadas según el caso.",
+    "tipo": "Conducción bajo influencia",
+    "valor_multa": "45 SMDLV ($2.626.359)"
+  },
+  {
+    "codigo": "E04",
+    "descripcion": "Transportar simultáneamente personas y sustancias peligrosas. Suspensión de licencia e inmovilización.",
+    "tipo": "Transporte peligroso",
+    "valor_multa": "45 SMDLV ($2.626.359)"
+  },
+  {
+    "codigo": "F01",
+    "descripcion": "Invadir la calzada o transitar en ella con patines, patinetas o similares.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F02",
+    "descripcion": "Llevar objetos que obstaculicen o afecten el tránsito.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F03",
+    "descripcion": "Cruzar por sitios no permitidos o transitar sobre la vía férrea.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F04",
+    "descripcion": "Ubicarse delante o detrás de un vehículo con el motor encendido.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F05",
+    "descripcion": "Remolcarse de vehículos en movimiento.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F06",
+    "descripcion": "Realizar acciones que pongan en riesgo la integridad personal.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F07",
+    "descripcion": "Cruzar la vía entre el tráfico cuando existen pasos peatonales.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F08",
+    "descripcion": "Ocupar la zona de seguridad de la vía férrea.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F09",
+    "descripcion": "Subirse o bajarse de un vehículo en movimiento.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F10",
+    "descripcion": "Transitar por túneles, puentes o viaductos ferroviarios.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F11",
+    "descripcion": "Invadir zonas exclusivas del sistema de transporte masivo sin autorización.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "F12",
+    "descripcion": "Cruzar la vía fuera de zonas autorizadas en perímetro urbano.",
+    "tipo": "Peatones",
+    "valor_multa": "2 SMDLV ($116.727)"
+  },
+  {
+    "codigo": "G01",
+    "descripcion": "Fumar en vehículo de servicio público. Obligación de descender y asistir a curso.",
+    "tipo": "Comparendo educativo",
+    "valor_multa": "Curso pedagógico (sin multa económica)"
+  },
+  {
+    "codigo": "G02",
+    "descripcion": "Peatones o ciclistas que incumplan normas de tránsito. Amonestación y curso obligatorio.",
+    "tipo": "Comparendo educativo",
+    "valor_multa": "Curso pedagógico (sin multa económica)"
+  } 
+]
