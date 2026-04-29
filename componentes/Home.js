@@ -2,168 +2,310 @@ import React, { useEffect, useRef, useState } from 'react';
 import {
   View,
   Text,
-  ScrollView,
-  FlatList,
-  Image,
   StyleSheet,
-  Dimensions,
+  FlatList,
   TouchableOpacity,
-  ActivityIndicator,
-  SafeAreaView,
+  Dimensions,
   StatusBar,
+  Image,
 } from 'react-native';
-import { collection, getDocs, orderBy, query } from 'firebase/firestore';
-import { db, auth } from '../firebase/firebaseConfig';
-import { useNavigation } from '@react-navigation/native'; // ✅ IMPORTANTE
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
-// ── Dots del slider ──────────────────────────────────────────────────────────
-const SliderDots = ({ total, active }) => (
-  <View style={styles.dotsContainer}>
-    {Array.from({ length: total }).map((_, i) => (
-      <View key={i} style={[styles.dot, i === active ? styles.dotActive : styles.dotInactive]} />
-    ))}
+// 🔷 BANNERS (puedes luego traerlos de Firebase)
+const banners = [
+  {
+    id: '1',
+    titulo: 'La dificultad aumenta',
+    descripcion: 'Conoce los nuevos examenes de conduccion',
+    boton: 'Ver más',
+    imagen: 'https://cdn-icons-png.flaticon.com/128/15532/15532224.png',
+    color: '#4c6ef5',
+  },
+  {
+    id: '2',
+    titulo: '¿Pico y placa?',
+    descripcion: 'Revisalo aquí',
+    boton: 'Ver más',
+    imagen: 'https://cdn-icons-png.flaticon.com/128/4924/4924519.png',
+    color: '#3b52ac',
+  },
+  {
+    id: '3',
+    titulo: 'Gestiona documentos',
+    descripcion: 'Todo en un solo lugar',
+    boton: 'Ver documentos',
+    imagen: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
+    color: '#1e2a78',
+  },
+];
+
+// OPCIONES
+const opciones = [
+  { id: '1', titulo: 'Infracciones', imagen: 'https://cdn-icons-png.flaticon.com/512/2333/2333368.png', ruta: 'Infracciones' },
+  { id: '2', titulo: 'Examen', imagen: 'https://cdn-icons-png.flaticon.com/128/3277/3277169.png', ruta: 'Examen' },
+  { id: '3', titulo: 'Documentos', imagen: 'https://cdn-icons-png.flaticon.com/128/15325/15325241.png', ruta: 'Documentos' },
+];
+
+export default function Home({ navigation }) {
+
+  const [active, setActive] = useState(0);
+  const flatRef = useRef();
+
+  // AUTO SLIDER
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const next = (active + 1) % banners.length;
+      flatRef.current?.scrollToIndex({ index: next, animated: true });
+      setActive(next);
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [active]);
+
+  //  RENDER BANNER
+  const renderBanner = ({ item }) => (
+  <View style={[styles.banner, { backgroundColor: item.color }]}>
+
+    {/*  CONTENIDO */}
+    <View style={styles.bannerContent}>
+      <Text style={styles.bannerTitle}>{item.titulo}</Text>
+      <Text style={styles.bannerDesc}>{item.descripcion}</Text>
+
+      <TouchableOpacity style={styles.bannerBtn}>
+        <Text style={styles.bannerBtnText}>
+          {item.boton || 'Ver más'}
+        </Text>
+      </TouchableOpacity>
+    </View>
+
+    {/*  IMAGEN */}
+    <Image
+      source={{ uri: item.imagen }}
+      style={styles.bannerImage}
+      resizeMode="contain"
+    />
+
   </View>
 );
 
-// ── Banner individual ────────────────────────────────────────────────────────
-const BannerCard = ({ item }) => (
-  <View style={styles.bannerCard}>
-    <Image source={{ uri: item.imageUrl }} style={styles.bannerImage} resizeMode="cover" />
-    <View style={styles.bannerOverlay}>
-      {item.categoria ? (
-        <View style={styles.bannerBadge}>
-          <Text style={styles.bannerBadgeText}>{item.categoria}</Text>
-        </View>
-      ) : null}
-      <Text style={styles.bannerTitle} numberOfLines={2}>{item.titulo}</Text>
-      {item.descripcion ? (
-        <Text style={styles.bannerDesc} numberOfLines={1}>{item.descripcion}</Text>
-      ) : null}
-    </View>
-  </View>
-);
 
-// ── Icono de acción ──────────────────────────────────────────────────────────
-const AccionCard = ({ emoji, label, onPress }) => (
-  <TouchableOpacity style={styles.accionCard} onPress={onPress} activeOpacity={0.75}>
-    <View style={styles.accionIconBox}>
-      <Text style={styles.accionEmoji}>{emoji}</Text>
-    </View>
-    <Text style={styles.accionLabel}>{label}</Text>
+  //  RENDER OPCIONES
+const renderItem = ({ item }) => (
+  <TouchableOpacity
+    style={styles.card}
+    onPress={() => navigation.navigate(item.ruta)}
+  >
+    <Image
+      source={{ uri: item.imagen }}
+      style={styles.iconoImg}
+      resizeMode="contain"
+    />
+
+    <Text style={styles.texto}>{item.titulo}</Text>
   </TouchableOpacity>
 );
 
-// ── Pantalla Home ────────────────────────────────────────────────────────────
-export default function Home() {
-  const navigation = useNavigation(); // ✅ CLAVE
-
-  const [banners, setBanners] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [activeSlide, setActiveSlide] = useState(0);
-  const flatListRef = useRef(null);
-  const timerRef = useRef(null);
-
-  const usuario = auth.currentUser;
-
-  useEffect(() => {
-    const fetchBanners = async () => {
-      try {
-        const q = query(collection(db, 'banners'), orderBy('orden', 'asc'));
-        const snapshot = await getDocs(q);
-        const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setBanners(data.length > 0 ? data : BANNERS_FALLBACK);
-      } catch (error) {
-        console.log("Error cargando banners:", error); // 👀 DEBUG
-        setBanners(BANNERS_FALLBACK);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchBanners();
-  }, []);
-
-  useEffect(() => {
-    if (banners.length > 1) {
-      timerRef.current = setInterval(() => {
-        setActiveSlide(prev => {
-          const next = (prev + 1) % banners.length;
-          flatListRef.current?.scrollToIndex({ index: next, animated: true });
-          return next;
-        });
-      }, 4000);
-    }
-    return () => clearInterval(timerRef.current);
-  }, [banners]);
-
-  const onScrollEnd = (e) => {
-    const index = Math.round(e.nativeEvent.contentOffset.x / (SCREEN_WIDTH - 40));
-    setActiveSlide(index);
-
-    clearInterval(timerRef.current);
-    timerRef.current = setInterval(() => {
-      setActiveSlide(prev => {
-        const next = (prev + 1) % banners.length;
-        flatListRef.current?.scrollToIndex({ index: next, animated: true });
-        return next;
-      });
-    }, 4000);
-  };
-
-  // ✅ navegación segura
-  const irA = (pantalla) => {
-    navigation.navigate(pantalla);
-  };
-
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <StatusBar backgroundColor={'#f5f8ff'} barStyle={'dark-content'} />
+    <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="dark-content" />
 
-      <View style={styles.topbar}>
-        <Text style={styles.topbarTitle}>Bienvenido 👋</Text>
-        <Text style={styles.topbarSub}>
-          {usuario?.displayName || usuario?.email?.split('@')[0] || 'Usuario'}
-        </Text>
+      {/*  HEADER */}
+      <View style={styles.header}>
+        <Text style={styles.title}>Smart Vial</Text>
+        <Text style={styles.subtitle}>Tu mano derecha en la Via</Text>
       </View>
 
-      <ScrollView
-        style={styles.container}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom: 40 }}
-      >
+      {/*  SLIDER */}
+      <FlatList
+        ref={flatRef}
+        data={banners}
+        renderItem={renderBanner}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={(item) => item.id}
+        contentContainerStyle={{ paddingBottom: 0 }}
+        onMomentumScrollEnd={(e) => {
+          const index = Math.round(
+            e.nativeEvent.contentOffset.x / width
+          );
+          setActive(index);
+        }}
+      />
 
-        <View style={styles.sliderWrapper}>
-          {loading ? (
-            <View style={styles.loaderBox}>
-              <ActivityIndicator size="large" color="#f4b400" />
-            </View>
-          ) : (
-            <>
-              <FlatList
-                ref={flatListRef}
-                data={banners}
-                keyExtractor={item => item.id}
-                renderItem={({ item }) => <BannerCard item={item} />}
-                horizontal
-                pagingEnabled
-                showsHorizontalScrollIndicator={false}
-                onMomentumScrollEnd={onScrollEnd}
-              />
-              <SliderDots total={banners.length} active={activeSlide} />
-            </>
-          )}
-        </View>
+      {/*  DOTS */}
+      <View style={styles.dots}>
+        {banners.map((_, i) => (
+          <View
+            key={i}
+            style={[
+              styles.dot,
+              i === active && styles.dotActive,
+            ]}
+          />
+        ))}
+      </View>
 
-        <Text style={styles.sectionLabel}>Servicios</Text>
-
-        <View style={styles.accionGrid}>
-          <AccionCard emoji="⚠️" label="Infracciones" onPress={() => irA('Infracciones')} />
-          <AccionCard emoji="📋" label="Examen" onPress={() => irA('Examen')} />
-          <AccionCard emoji="📄" label="Documentos" onPress={() => irA('Documentos')} />
-        </View>
-
-      </ScrollView>
+      {/*  GRID */}
+      <FlatList
+        data={opciones}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+        numColumns={3}
+        contentContainerStyle={styles.grid}
+      />
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f8ff',
+  },
+
+  //  HEADER
+  header: {
+    paddingHorizontal: 20,
+    paddingTop: 20,
+    paddingBottom: 10,
+  },
+  title: {
+    fontSize: 26,
+    fontWeight: '700',
+    color: '#1e2a78',
+  },
+  subtitle: {
+    fontSize: 13,
+    color: '#777',
+    marginTop: 2,
+  },
+
+  //  BANNER
+  banner: {
+    width: width,
+    paddingnHorizontal: 20,
+    borderRadius: 22,
+    padding: 20,
+    height: 170,
+    overflow: 'hidden',
+    justifyContent: 'center',
+
+    // sombra iOS
+    shadowColor: '#000',
+    shadowOpacity: 0.12,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 4 },
+
+    // sombra Android
+    elevation: 6,
+  },
+
+  bannerContent: {
+    zIndex: 2,
+    width: '65%',
+  },
+
+  bannerTitle: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: '700',
+  },
+
+  bannerDesc: {
+    color: 'rgba(255,255,255,0.85)',
+    fontSize: 13,
+    marginTop: 6,
+  },
+
+  bannerBtn: {
+    backgroundColor: '#f4b400',
+    marginTop: 14,
+    paddingVertical: 7,
+    paddingHorizontal: 16,
+    borderRadius: 12,
+    alignSelf: 'flex-start',
+
+    shadowColor: '#f4b400',
+    shadowOpacity: 0.4,
+    shadowRadius: 6,
+    elevation: 3,
+  },
+
+  bannerBtnText: {
+    color: '#1e2a78',
+    fontWeight: '700',
+    fontSize: 12,
+  },
+
+  bannerImage: {
+    position: 'absolute',
+    right: 5,
+    bottom: 0,
+    width: 120,
+    height: 120,
+    opacity: 0.95,
+  },
+
+  //  DOTS
+  dots: {
+    flexDirection: 'row',
+  justifyContent: 'center',
+  marginTop: -10,   // ahora sí responde
+  marginBottom: 10,
+  },
+
+  dot: {
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: '#ccc',
+    marginHorizontal: 4,
+  },
+
+  dotActive: {
+    width: 18,
+    backgroundColor: '#1e2a78',
+  },
+
+  // 🔷 GRID
+  grid: {
+    paddingHorizontal: 12,
+    paddingTop: 10,
+  },
+
+  // 🔷 CARD
+  card: {
+    flex: 1,
+    backgroundColor: '#fff',
+    margin: 10,
+    borderRadius: 20,
+    paddingVertical: 22,
+    paddingHorizontal: 10,
+    alignItems: 'center',
+
+    shadowColor: '#000',
+    shadowOpacity: 0.08,
+    shadowRadius: 10,
+    shadowOffset: { width: 0, height: 4 },
+
+    elevation: 5,
+  },
+
+  // 🔷 ICONO CON BURBUJA ()
+  iconoImg: {
+    width: 50,
+    height: 50,
+    marginBottom: 12,
+  },
+
+  texto: {
+    fontSize: 12,
+    textAlign: 'center',
+    color: '#676360',
+    fontWeight: '600',
+  },
+});

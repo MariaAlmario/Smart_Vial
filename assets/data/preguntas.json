@@ -1,0 +1,233 @@
+[
+  {
+    "id": 1,
+    "pregunta": "¿Cuál es el límite máximo de velocidad en zonas urbanas?",
+    "opciones": ["50 km/h", "30 km/h", "60 km/h", "80 km/h"],
+    "correcta": 0,
+    "categoria": "velocidad"
+  },
+  {
+    "id": 2,
+    "pregunta": "¿Cuál es el límite máximo de velocidad en carreteras nacionales?",
+    "opciones": ["90 km/h", "70 km/h", "100 km/h", "120 km/h"],
+    "correcta": 0,
+    "categoria": "velocidad"
+  },
+  {
+    "id": 3,
+    "pregunta": "¿Qué significa esta señal?",
+    "imagen": "data:image/jpeg;base64,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",
+    "opciones": ["Prohibición", "Advertencia", "Información", "Obligación"],
+    "correcta": 0,
+    "categoria": "señales"
+  },
+  {
+    "id": 4,
+    "pregunta": "¿Qué debe hacer si el semáforo está en rojo?",
+    "opciones": [
+      "Detenerse completamente",
+      "Reducir velocidad",
+      "Continuar si no hay tráfico",
+      "Girar rápidamente"
+    ],
+    "correcta": 0,
+    "categoria": "semaforos"
+  },
+  {
+    "id": 5,
+    "pregunta": "¿Qué representa una línea amarilla continua?",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTomEkBcx_a-ErCfMRArMfcg8CKpHNPbeD2kg&s",
+
+    "opciones": [
+      "Prohibido adelantar",
+      "Carril exclusivo",
+      "Zona de parqueo",
+      "Paso peatonal"
+    ],
+    "correcta": 0,
+    "categoria": "señales"
+  },
+  {
+    "id": 6,
+    "pregunta": "¿Qué debe hacer en un paso peatonal sin semáforo?",
+    "opciones": [
+      "Ceder el paso",
+      "Acelerar",
+      "Tocar el pito",
+      "Ignorar peatones"
+    ],
+    "correcta": 0,
+    "categoria": "normas"
+  },
+  {
+    "id": 7,
+    "pregunta": "¿Qué documentos debe portar?",
+    "opciones": [
+      "Licencia, SOAT, técnico-mecánica",
+      "Solo licencia",
+      "Licencia y seguro",
+      "Cédula únicamente"
+    ],
+    "correcta": 0,
+    "categoria": "normas"
+  },
+  {
+    "id": 8,
+    "pregunta": "¿Qué hacer en una intersección sin señalización?",
+    "opciones": [
+      "Ceder el paso a la derecha",
+      "Acelerar",
+      "Detenerse siempre",
+      "Ignorar otros vehículos"
+    ],
+    "correcta": 0,
+    "categoria": "normas"
+  },
+  {
+    "id": 9,
+    "pregunta": "¿Cuándo usar direccionales?",
+    "opciones": [
+      "Al girar o cambiar carril",
+      "Solo en autopistas",
+      "Solo de noche",
+      "Nunca"
+    ],
+    "correcta": 0,
+    "categoria": "normas"
+  },
+  {
+    "id": 10,
+    "pregunta": "¿Sanciones por conducir ebrio?",
+    "opciones": [
+      "Multa y suspensión",
+      "Solo advertencia",
+      "Nada",
+      "Solo puntos"
+    ],
+    "correcta": 0,
+    "categoria": "normas"
+  },
+  {
+    "id": 11,
+    "pregunta": "¿Quién tiene prioridad?",
+    "opciones": [
+      "Vehículos de emergencia",
+      "Vehículos grandes",
+      "Motocicletas",
+      "Peatones distraídos"
+    ],
+    "correcta": 0,
+    "categoria": "normas"
+  },
+  {
+    "id": 12,
+    "pregunta": "¿Qué significa señal azul con P?",
+    "imagen": "data:image/jpeg;base64,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",
+    "opciones": [
+      "Parqueo permitido",
+      "Prohibido parquear",
+      "Zona escolar",
+      "Hospital"
+    ],
+    "correcta": 0,
+    "categoria": "señales"
+  },
+  {
+    "id": 13,
+    "pregunta": "¿Cómo adelantar correctamente?",
+    "opciones": [
+      "Por la izquierda",
+      "Por la derecha",
+      "Sin señalizar",
+      "Acelerando bruscamente"
+    ],
+    "correcta": 0,
+    "categoria": "normas"
+  },
+  {
+    "id": 14,
+    "pregunta": "¿Qué hacer con niebla?",
+    "opciones": [
+      "Reducir velocidad y usar luces bajas",
+      "Usar luces altas",
+      "Acelerar",
+      "Detenerse en vía"
+    ],
+    "correcta": 0,
+    "categoria": "condiciones"
+  },
+  {
+    "id": 15,
+    "pregunta": "¿Qué implica la señal PARE?",
+    "imagen": "data:image/png;base64,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",
+    "opciones": [
+      "Detenerse completamente",
+      "Reducir velocidad",
+      "Continuar",
+      "Acelerar"
+    ],
+    "correcta": 0,
+    "categoria": "señales"
+  },
+  {
+    "id": 16,
+    "pregunta": "¿Qué significa luz verde?",
+    "opciones": [
+      "Avanzar",
+      "Detenerse",
+      "Precaución",
+      "Ceder paso"
+    ],
+    "correcta": 0,
+    "categoria": "semaforos"
+  },
+  {
+    "id": 17,
+    "pregunta": "¿Qué hacer si peatón cruza imprudentemente?",
+    "opciones": [
+      "Reducir y detenerse",
+      "Ignorar",
+      "Acelerar",
+      "Tocar pito constantemente"
+    ],
+    "correcta": 0,
+    "categoria": "normas"
+  },
+  {
+    "id": 18,
+    "pregunta": "¿Cuándo usar el pito?",
+    "opciones": [
+      "Advertir peligro",
+      "Saludar",
+      "Molestar",
+      "Siempre"
+    ],
+    "correcta": 0,
+    "categoria": "normas"
+  },
+  {
+    "id": 19,
+    "pregunta": "¿Qué significa P tachada?",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHfCBxFVumg0S2VtUuwBmWAFgN_94Rc40MBw&s",
+    "opciones": [
+      "Prohibido estacionar",
+      "Parqueo libre",
+      "Zona escolar",
+      "Hospital"
+    ],
+    "correcta": 0,
+    "categoria": "señales"
+  },
+  {
+    "id": 20,
+    "pregunta": "¿En donde deben estar los niños menores de 10 años?",
+    "opciones": [
+      "Silla de seguridad",
+      "Adelante",
+      "Sin cinturón",
+      "De pie"
+    ],
+    "correcta": 0,
+    "categoria": "normas"
+  }
+]
