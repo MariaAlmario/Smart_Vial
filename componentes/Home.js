@@ -10,11 +10,10 @@ import {
   Image,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
 
 const { width } = Dimensions.get('window');
 
-// 🔷 BANNERS (puedes luego traerlos de Firebase)
+// 🔷 BANNERS (AHORA CON RUTA)
 const banners = [
   {
     id: '1',
@@ -23,6 +22,7 @@ const banners = [
     boton: 'Ver más',
     imagen: 'https://cdn-icons-png.flaticon.com/128/15532/15532224.png',
     color: '#4c6ef5',
+    ruta: 'Baner1', 
   },
   {
     id: '2',
@@ -31,6 +31,7 @@ const banners = [
     boton: 'Ver más',
     imagen: 'https://cdn-icons-png.flaticon.com/128/4924/4924519.png',
     color: '#3b52ac',
+    ruta: 'Baner2',
   },
   {
     id: '3',
@@ -39,6 +40,7 @@ const banners = [
     boton: 'Ver documentos',
     imagen: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
     color: '#1e2a78',
+    ruta: 'Baner3', 
   },
 ];
 
@@ -65,60 +67,61 @@ export default function Home({ navigation }) {
     return () => clearInterval(interval);
   }, [active]);
 
-  //  RENDER BANNER
+  // 🔷 RENDER BANNER
   const renderBanner = ({ item }) => (
-  <View style={[styles.banner, { backgroundColor: item.color }]}>
+    <View style={[styles.banner, { backgroundColor: item.color }]}>
 
-    {/*  CONTENIDO */}
-    <View style={styles.bannerContent}>
-      <Text style={styles.bannerTitle}>{item.titulo}</Text>
-      <Text style={styles.bannerDesc}>{item.descripcion}</Text>
+      <View style={styles.bannerContent}>
+        <Text style={styles.bannerTitle}>{item.titulo}</Text>
+        <Text style={styles.bannerDesc}>{item.descripcion}</Text>
 
-      <TouchableOpacity style={styles.bannerBtn}>
-        <Text style={styles.bannerBtnText}>
-          {item.boton || 'Ver más'}
-        </Text>
-      </TouchableOpacity>
+        {/* AQUI ESTA LA MAGIA */}
+        <TouchableOpacity
+          style={styles.bannerBtn}
+          onPress={() => navigation.navigate(item.ruta)}
+        >
+          <Text style={styles.bannerBtnText}>
+            {item.boton || 'Ver más'}
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+      <Image
+        source={{ uri: item.imagen }}
+        style={styles.bannerImage}
+        resizeMode="contain"
+      />
+
     </View>
+  );
 
-    {/*  IMAGEN */}
-    <Image
-      source={{ uri: item.imagen }}
-      style={styles.bannerImage}
-      resizeMode="contain"
-    />
+  // RENDER OPCIONES
+  const renderItem = ({ item }) => (
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => navigation.navigate(item.ruta)}
+    >
+      <Image
+        source={{ uri: item.imagen }}
+        style={styles.iconoImg}
+        resizeMode="contain"
+      />
 
-  </View>
-);
-
-
-  //  RENDER OPCIONES
-const renderItem = ({ item }) => (
-  <TouchableOpacity
-    style={styles.card}
-    onPress={() => navigation.navigate(item.ruta)}
-  >
-    <Image
-      source={{ uri: item.imagen }}
-      style={styles.iconoImg}
-      resizeMode="contain"
-    />
-
-    <Text style={styles.texto}>{item.titulo}</Text>
-  </TouchableOpacity>
-);
+      <Text style={styles.texto}>{item.titulo}</Text>
+    </TouchableOpacity>
+  );
 
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
 
-      {/*  HEADER */}
+      {/* 🔷 HEADER */}
       <View style={styles.header}>
         <Text style={styles.title}>Smart Vial</Text>
         <Text style={styles.subtitle}>Tu mano derecha en la Via</Text>
       </View>
 
-      {/*  SLIDER */}
+      {/* 🔷 SLIDER */}
       <FlatList
         ref={flatRef}
         data={banners}
@@ -127,7 +130,6 @@ const renderItem = ({ item }) => (
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id}
-        contentContainerStyle={{ paddingBottom: 0 }}
         onMomentumScrollEnd={(e) => {
           const index = Math.round(
             e.nativeEvent.contentOffset.x / width
@@ -136,7 +138,7 @@ const renderItem = ({ item }) => (
         }}
       />
 
-      {/*  DOTS */}
+      {/* 🔷 DOTS */}
       <View style={styles.dots}>
         {banners.map((_, i) => (
           <View
@@ -149,7 +151,7 @@ const renderItem = ({ item }) => (
         ))}
       </View>
 
-      {/*  GRID */}
+      {/* 🔷 GRID */}
       <FlatList
         data={opciones}
         renderItem={renderItem}
@@ -167,40 +169,31 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f8ff',
   },
 
-  //  HEADER
   header: {
     paddingHorizontal: 20,
     paddingTop: 20,
     paddingBottom: 10,
   },
+
   title: {
     fontSize: 26,
     fontWeight: '700',
     color: '#1e2a78',
   },
+
   subtitle: {
     fontSize: 13,
     color: '#777',
     marginTop: 2,
   },
 
-  //  BANNER
   banner: {
     width: width,
-    paddingnHorizontal: 20,
     borderRadius: 22,
     padding: 20,
     height: 170,
     overflow: 'hidden',
     justifyContent: 'center',
-
-    // sombra iOS
-    shadowColor: '#000',
-    shadowOpacity: 0.12,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 4 },
-
-    // sombra Android
     elevation: 6,
   },
 
@@ -228,10 +221,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderRadius: 12,
     alignSelf: 'flex-start',
-
-    shadowColor: '#f4b400',
-    shadowOpacity: 0.4,
-    shadowRadius: 6,
     elevation: 3,
   },
 
@@ -250,12 +239,11 @@ const styles = StyleSheet.create({
     opacity: 0.95,
   },
 
-  //  DOTS
   dots: {
     flexDirection: 'row',
-  justifyContent: 'center',
-  marginTop: -10,   // ahora sí responde
-  marginBottom: 10,
+    justifyContent: 'center',
+    marginTop: -10,
+    marginBottom: 10,
   },
 
   dot: {
@@ -271,13 +259,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#1e2a78',
   },
 
-  // 🔷 GRID
   grid: {
     paddingHorizontal: 12,
     paddingTop: 10,
   },
 
-  // 🔷 CARD
   card: {
     flex: 1,
     backgroundColor: '#fff',
@@ -286,16 +272,9 @@ const styles = StyleSheet.create({
     paddingVertical: 22,
     paddingHorizontal: 10,
     alignItems: 'center',
-
-    shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowRadius: 10,
-    shadowOffset: { width: 0, height: 4 },
-
     elevation: 5,
   },
 
-  // 🔷 ICONO CON BURBUJA ()
   iconoImg: {
     width: 50,
     height: 50,
